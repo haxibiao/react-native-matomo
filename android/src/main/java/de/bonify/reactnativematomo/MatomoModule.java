@@ -46,6 +46,11 @@ public class MatomoModule extends ReactContextBaseJavaModule implements Lifecycl
     }
 
     @ReactMethod
+    public void setDispatchInterval(long interval) {
+        mMatomoTracker.setDispatchInterval(interval);
+    }
+
+    @ReactMethod
     public void setCustomDimension(@NonNull int id, @Nullable String value){
         if(value == null || value.length() == 0) {
             customDimensions.remove(id);
